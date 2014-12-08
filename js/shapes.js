@@ -29,7 +29,7 @@ function createCircle(left, top, width, height, stylesMap) {
 
     circle.renderShape = function(canvasCtx) {
         canvasCtx.beginPath();
-        canvasCtx.arc(this.left, this.top, this.width / 2, 0, 2 * Math.PI);
+        canvasCtx.arc((this.left + this.width)/2, (this.top + this.height) /2, this.width / 2, 0, 2 * Math.PI);
         canvasCtx.fill();
      }
     return circle;
@@ -37,7 +37,7 @@ function createCircle(left, top, width, height, stylesMap) {
 
 registerPrototypalShape('Circle', createCircle);
 
-function createText(left, top, right, width, height, stylesMap) {
+function createText(left, top, width, height, stylesMap) {
     var text = createShape(left, top, width, height, stylesMap);
 
     text.renderShape = function (canvasCtx) {
